@@ -1,4 +1,4 @@
-package com.forum.forum;
+package com.forum;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

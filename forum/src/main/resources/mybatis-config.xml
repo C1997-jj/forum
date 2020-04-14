@@ -5,8 +5,8 @@
 <configuration>
     <settings>
         <setting name="cacheEnabled" value="true"/>
-        <setting name="defaultStatementTimeour" value="3000" />
+        <setting name="defaultStatementTimeout" value="3000" />
         <setting name= "mapUnderscoreToCamelCase" value="true" />
-        <setting name="useGeneratedkeys" value="true"/>
+        <setting name="useGeneratedKeys" value="true"/>
     </settings>
 </configuration>
