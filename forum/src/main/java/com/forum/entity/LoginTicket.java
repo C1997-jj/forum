@@ -21,6 +21,8 @@ public class LoginTicket {
         this.expired = null;
     }
 
+
+
     public Integer getId() {
         return id;
     }

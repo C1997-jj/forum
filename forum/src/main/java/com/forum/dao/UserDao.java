@@ -11,15 +11,15 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface UserDao {
     String TABLE_NAME = "user";
-    String INSERT_FILDS = "tel, password, salt, name, headLink";
-    String SELECT_FILEDS = "id, " + INSERT_FILDS;
+    String INSERT_FILDS = "tel, password, salt, name, headLink ";
+    String SELECT_FILDS = "id, " + INSERT_FILDS;
 
     /**
      * 查找手机号是否唯一
      * @param tel
      * @return
      */
-    @Select({"select", SELECT_FILEDS, "form ", TABLE_NAME, " where tel = #{tel}"})
+    @Select({"select ", SELECT_FILDS, "from ", TABLE_NAME, " where tel = #{tel}"})
     User getUserByTel(String tel);
 
     /**
