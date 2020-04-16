@@ -43,19 +43,12 @@ public class LoginController {
     }
 
     /**
-     * 登出
+     * 登录
+     * @param tel
+     * @param password
+     * @param response
      * @return
      */
-    @RequestMapping(path = "/user/logout/",method = RequestMethod.GET)
-    @ResponseBody
-    public String logout(){
-        try {
-            Map<String,Object> map = userService.logout();
-            return JSONUtil.toJSONString(200,map);
-            }catch (Exception e) {
-            return JSONUtil.toJSONString(500,"退出失败");
-        }
-    }
     @RequestMapping(path = "/login/",method = RequestMethod.POST)
     @ResponseBody
     public String login(@RequestParam("tel")String tel, @RequestParam("password")String password, HttpServletResponse response){
@@ -73,6 +66,21 @@ public class LoginController {
         } catch (Exception e) {
             System.out.println(e);
             return JSONUtil.toJSONString(500,"登录失败");
+        }
+    }
+
+    /**
+     * 登出
+     * @return
+     */
+    @RequestMapping(path = "/user/logout/",method = RequestMethod.GET)
+    @ResponseBody
+    public String logout(){
+        try {
+            Map<String,Object> map = userService.logout();
+            return JSONUtil.toJSONString(200,map);
+        }catch (Exception e) {
+            return JSONUtil.toJSONString(500,"退出失败");
         }
     }
 }
